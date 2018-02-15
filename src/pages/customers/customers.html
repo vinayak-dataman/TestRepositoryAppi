@@ -1,0 +1,70 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Customers</ion-title>
+   
+   
+    <ion-buttons end>
+      <button (click)="toggle()" ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button (click)="setting()" ion-button icon-only>
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+      
+  </ion-buttons>
+  </ion-navbar>
+ 
+</ion-header>
+
+<ion-content>
+  <ion-toolbar *ngIf="toggled"  color="dark">
+    <ion-searchbar
+    [(ngModel)]="searchTerm"
+    
+      *ngIf="toggled"
+      placeholder="Search Customers"
+      [showCancelButton]="true"
+      (search)="searchWithKeyword()"
+      (ionCancel)="onSearchCancel($event)">
+      
+    </ion-searchbar>
+    </ion-toolbar>
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event);">
+        <ion-refresher-content 
+        pullingText="Pull to refresh"
+        pullingIcon="arrow-dropdown"
+        refreshingSpinner="circles"
+        refreshingText="..fetching">
+      </ion-refresher-content>
+      </ion-refresher>
+  
+      <ion-row style="background-color:#F0f0f0; height:33px; padding-left:8px; padding-top:8px">
+        <b>Customer Information</b>
+      </ion-row>
+      <ion-list>
+        <ion-item *ngFor="let record of records" class="item_background" (click)="showCustomersDetails(record)">
+          <ion-row>
+            <ion-col>
+              <p style="font-size: 12px;color:black; margin-top:5px"><span style="color: #A3A3A3">Customer Number&nbsp;  </span><b> {{record.customerNo}}</b></p>
+              <p style="font-size: 12px;color:black; margin-top:5px"><span style="color: #A3A3A3">Customer Name&nbsp;  </span> <b>{{record.name}}</b></p>
+            </ion-col>
+          </ion-row>
+      </ion-item>
+      <ion-item *ngIf="!records" >
+        <p style="color:#76787A; margin-top: 50px; margin-left: 40px; text-align:center" class="text_style">No Customer found</p>
+      </ion-item>
+      </ion-list>
+      <ion-infinite-scroll *ngIf="hasMoreData" (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content loadingText="Loading More Orders..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+   
+        
+</ion-content>

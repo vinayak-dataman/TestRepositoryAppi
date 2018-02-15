@@ -1,0 +1,39 @@
+
+<ion-header>
+  <!-- use ion-toolbar for a normal toolbar and ion-navbar for navigation -->
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      My Companies
+    </ion-title>
+    <ion-buttons right clear>
+      <button (click)="onAddCompanies()" style="background-color:transparent">
+        <ion-icon class="ion-icon" name="md-add" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list no-line>
+      <ion-item *ngFor="let company of addedCompaniesList" class="item_background" (click)="authCompany(company.companyUrl,company.title)" (press)="pressEvent($event,company)">
+        
+        <p class="text_style" style="color:aliceblue">{{company.title}}</p>
+       
+      </ion-item>
+      <ion-row *ngIf="addedCompaniesList" >
+          <p class="bottom" style="color:#76787A; text-align:center; margin-left: 30px" class="text_style" >To remove a company tap and hold</p>
+        </ion-row>
+      <ion-row *ngIf="!addedCompaniesList" >
+        <p style="color:#76787A; margin-top: 50px; margin-left: 40px; text-align:center" class="text_style">To add a company tap +</p>
+      </ion-row>
+    </ion-list>
+   
+
+</ion-content>

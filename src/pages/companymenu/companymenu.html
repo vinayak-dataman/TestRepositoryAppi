@@ -1,0 +1,26 @@
+<!--
+  Generated template for the CompanymenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-menu [content]="mycontent" side="left" id="menu2">
+  <ion-header class="bar-profile">
+    <div class="profile" *ngIf="loggedUserName">
+      <img class="profile-picture" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Joel_Cooke_Verdaguer.png" />
+      <p class="name">{{loggedUserName}}<br/>{{loggeduserEmail}}</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item menuClose class="side_menu_item" *ngFor="let p of pagess" (click)="openPage(p)">
+        <ion-row>
+          <img src="{{p.icon}}" alt="your image" height="26" width="26">
+          <p style="color:#272727; padding-top: 4px; padding-left: 10px">{{p.title}}</p>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #mycontent></ion-nav>

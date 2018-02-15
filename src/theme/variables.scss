@@ -1,0 +1,147 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #4A90E2,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  lt_gray: #d7d7d7,
+  white: #fff,
+  green: #ae3498,
+  button-color: #4A90E2 ,
+  delete-color: red
+);
+
+$searchbar-ios-input-clear-icon-color:    white;
+$searchbar-ios-input-search-icon-color:   purple;
+
+$toolbar-ios-background: #4A90E2 ;
+$toolbar-md-background: #4A90E2 ;
+$toolbar-wp-background: #4A90E2 ;
+
+$searchbar-md-input-clear-icon-color:  #5b5b5b;
+$searchbar-ios-input-clear-icon-color:  #5b5b5b;
+$searchbar-md-input-search-icon-color: 	#5b5b5b;
+$searchbar-ios-input-search-icon-color: #5b5b5b;
+$searchbar-ios-input-clear-icon-color: 	rgba(0, 0, 0, .5);
+.toolbar-background {
+  background-color: danger;
+}
+.item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.list-md .item-input.input-has-focus:last-child .item-inner {
+  box-shadow: none;
+}
+
+.ion-icon 
+{
+  font-size: 25px; //Preferred size here
+}
+ion-header {
+  .button-md {
+    box-shadow: none;
+  }
+
+  .toolbar-title {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .caption_style {
+    font-size: 120px;
+    
+  }
+
+  .text_style {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+

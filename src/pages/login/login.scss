@@ -1,0 +1,96 @@
+// Page Stayles
+
+page-login {
+	.background 
+	{
+		background-color: #ffffff;
+		
+	}
+
+	.imglogo {
+		display : block;
+		margin : auto;
+	}
+//Preferred Scrolling content style spec here
+	.scroll-content {
+		align-content: center;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	// ion card Spec ...
+	ion-card.card {
+		box-shadow: none;
+		background: transparent;
+		border-radius: 5px;
+	}
+
+	a, p,
+	ion-card-header.card-header 
+	{
+		color: #222222!important;
+	}
+
+	.list > .item-block:first-child {
+		border: medium none;
+	}
+
+
+	// List item content design spec ...
+	.item {
+		margin-bottom: 10px;
+		background: rgba(255, 255, 255, 0.5);
+		.text-input, {
+			color: #494949;
+			
+		}
+
+
+		// PlaceHolder Color spec
+		input::-moz-placeholder  {
+			color: #949494!important;
+			user-select: auto;
+		}
+		.ion-input {
+		//	border-bottom: 0.5px solid map-get($colors, lt_gray);
+			user-select: auto;
+		}
+		.ion-input-button {
+			
+		//	border-bottom: 0.5px solid map-get($colors, lt_gray);
+		}
+	
+
+		*::-webkit-input-placeholder  {
+			color: #494949!important;
+		}
+
+		*:-ms-input-placeholder  {
+			color: #494949!important;
+		}
+
+		*:-moz-placeholder  {
+			color: #494949!important;
+		}
+	
+
+	.icon {
+		padding-right: 10px;
+	}
+
+
+	.bottom {
+		position: absolute;
+		bottom: 0;
+	}
+	ion-icon {
+        font-size: 25px; //Preferred size here
+	}
+	
+	.button_style {
+		height: 48px;
+		
+	}
+}
+}

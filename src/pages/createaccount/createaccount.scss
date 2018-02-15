@@ -1,0 +1,90 @@
+	// Page Stayles
+page-createaccount 
+{
+
+	.background {
+		background-color: #ffffff;
+	}
+
+	// scrolling content style
+	.scroll-content {
+		align-content: center;
+	
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+//Preferred Card style here
+	ion-card.card {
+		box-shadow: none;
+		background: transparent;
+		border-radius: 5px;
+	}
+//Preferred card content spec here
+	a, p,
+	ion-card-header.card-header {
+		color: #222222!important;
+	}
+
+	.list > .item-block:first-child {
+		border: medium none;
+	}
+//Preferred list items style spec here
+	.item {
+		
+		background: rgba(255, 255, 255, 0.5);
+	
+		
+		.text-input {
+			color: #494949;
+			
+		}
+		.ion-input {
+			border-bottom: 0.5px solid map-get($colors, lt_gray);
+		}
+		.ion-input-button {
+			height: 46px;
+			
+			border-bottom: 0.5px solid map-get($colors, lt_gray);
+		}
+
+		//Preferred Placeholder styles here
+		input:-moz-placeholder {
+			color: #494949!important;
+			
+		}
+
+		*::-webkit-input-placeholder  {
+			color:#494949!important; 
+		}
+
+		*:-ms-input-placeholder  {
+			color: #494949 !important;
+		}
+
+		*:-moz-placeholder  {
+			color: #494949 !important;
+		}
+		
+	
+// icon spec
+	.icon {
+		padding-right: 10px;
+	}
+
+	.bottom {
+		position: absolute;
+		bottom: 0;
+	}
+		
+	}
+	.button_style {
+		height: 48px; //Preferred size here
+		margin-top: 20px;
+
+	}
+	.ion-icon 
+	{
+		font-size: 20px; //Preferred size here
+	}
+}

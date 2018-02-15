@@ -1,0 +1,52 @@
+page-slide-intro {
+
+    .back{
+        background-color: #ffffff;
+        
+        text-align: center;
+        
+      }
+    .scroll-content 
+    {
+         width: 100% !important;
+         height: 100% !important;
+        
+    }
+    .bottom {
+		position: absolute;
+        bottom: 0;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .sd_bottom {
+		position: absolute;
+        bottom: 30;
+        height: 85%;
+        width: 100%;
+        
+    }
+    
+    .img_style {
+
+        height: 35%;
+        width: 35%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .img_style1
+    {
+        height: 80%;
+        width: 80%;
+    }
+    .img_style2 
+    {
+        height: 85%;
+        width: 85%;
+    }
+    .button_style 
+    {
+        height: 48px;
+    }
+}

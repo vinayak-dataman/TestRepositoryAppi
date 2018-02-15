@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "../android.keystore",
+            "storePassword": "android",
+            "alias": "mykey1",
+            "password" : "password",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "../appispire.jks",
+            "storePassword": "spire1234",
+            "alias": "spire",
+            "password" : "spire1234",
+            "keystoreType": ""
+        }
+    }
+}

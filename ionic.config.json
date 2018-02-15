@@ -1,0 +1,8 @@
+{
+  "name": "Appi4Spire",
+  "app_id": "27723ab8",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

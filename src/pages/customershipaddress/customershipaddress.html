@@ -1,0 +1,222 @@
+<!--
+  Generated template for the CustomershipaddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ship Address</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color:#F0F0F0">
+  <ion-list *ngIf="item" style="padding-left:8px; padding-right:8px">
+    <ion-row style="padding-top:7px; height:30px">
+        <b>Ship To Address</b>
+    </ion-row>
+  
+    <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Ship-to ID</p>   
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.shipId}}</p>      
+        </ion-col>
+    </ion-row> 
+
+   
+    <ion-row *ngIf="item.name" style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Ship-to Name</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.name}}</p>    
+        </ion-col>
+                
+    </ion-row>
+
+
+    <ion-row style="background-color:white;height:3px"></ion-row>
+    <ion-row *ngIf="isAddressThere" style="background-color:white;">
+  
+  <ion-col col-6 >
+    <p class="row_item_style_left" >Address</p>  
+  </ion-col>
+  <ion-col  responsive-sm col-6 style="background-color:white; padding:0px !important">
+  <ion-row  responsive-sm *ngFor="let m of address" style="padding-bottom:0px !important">
+  <ion-col col-12  style="height:22px; padding-left:2px">
+  <p class="row_item_style_right" >{{m}}</p>    
+  </ion-col>
+  </ion-row>
+  </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >City</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.city}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Postal/Zip Code</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.postalCode}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Province/State</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.provState }}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.country" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Country</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{address_country}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row *ngIf="item.phone.number" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Phone </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.phone.number}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row  *ngIf="item.fax.number" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Fax</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.fax.number}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.email" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Email</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.email}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.website" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Website </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.website }}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.shipCode" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Shipping Method </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.shipCode}} - {{item.shipDescription}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.salesperson.code" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Salesperson </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.salesperson.code}} - {{item.salesperson.name}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.territory.code" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Territory</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.territory.code}} - {{item.territory.description}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row *ngIf="item.sellLevel" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Sell Price Level</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.sellLevel}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row *ngIf="item.defaultWarehouse" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Default Warehouse</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{item.defaultWarehouse}}</p>    
+    </ion-col>
+</ion-row> 
+
+<ion-row style="height:15px; background-color:white"></ion-row>
+<ion-row  style=" background-color:rgb(207, 202, 202); height:1px"></ion-row>
+<ion-item no-lines *ngFor="let item of address_contacts">
+    <ion-row *ngIf="item.name" style="height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Name</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.name}}</p>    
+        </ion-col>
+                    
+    </ion-row>
+
+    <ion-row *ngIf="item.email" style="height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Email</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.email}}</p>    
+        </ion-col>
+                
+    </ion-row>
+    
+   <ion-row *ngIf="item.phone.number" style="height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Phone</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.phone.number}}</p>    
+        </ion-col>
+                            
+    </ion-row>
+    <ion-row *ngIf="item.fax.number" style="height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Fax</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{item.fax.number}}</p>    
+        </ion-col>
+                
+    </ion-row>
+                 
+</ion-item>
+<ion-row  style=" background-color:white; height:5px"></ion-row>
+
+
+</ion-list>
+</ion-content>

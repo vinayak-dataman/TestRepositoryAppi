@@ -1,0 +1,33 @@
+<ion-header>
+    <!-- use ion-toolbar for a normal toolbar and ion-navbar for navigation -->
+    <ion-toolbar>
+        <ion-buttons left clear>
+            <button (click)="onBack()" style="background-color:transparent">
+                <ion-icon class="ion-icon" name="arrow-round-back" color="light"></ion-icon>
+            </button>
+        </ion-buttons>
+     
+  
+      <ion-title>
+        Forgot Password
+      </ion-title>
+      <ion-buttons right>
+          
+      </ion-buttons>
+      
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button block outline large (click)="onNext()">Continue</button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,71 @@
+
+
+<!-- Page content inputs -->
+<ion-content padding class="background">
+    
+		<ion-list >
+        <!-- logo on top of page -->
+      <ion-item no-lines justify-content-center align-items-center>
+        <ion-row justify-content-center align-items-center>
+          <ion-col>
+           <div style="text-align: center">
+            
+              <img align='center' src="assets/icon/Appi4Spire_v3_a.png" height="140px" width="180px">
+                 </div> 
+          </ion-col>
+             
+        </ion-row>
+        </ion-item>
+        <ion-item no-lines style="height:40px; user-select: auto; padding-right:16px;border-style: solid; border-width: 1px;border-radius:3px;border-color: #E3e3e3">
+					  <ion-label color="dark" item-left>
+              <ion-icon name="md-mail"></ion-icon>
+            </ion-label>
+            <ion-input style="user-select: auto" class="text_style" type="email" placeholder="Email" [(ngModel)]="userEmail" name="userEmail" ></ion-input>
+            <!-- <ion-input class="ion-input" type="email" placeholder="User Name" [(ngModel)]="userEmail" name="userEmail"></ion-input> -->
+        </ion-item>
+
+          <!-- Password Field with show/hide option controls-->
+        <ion-item no-lines style=" user-select: auto; padding-right:16px; border-style: solid; border-width: 1px;border-radius:3px;border-color: #E3e3e3">
+
+            
+              <ion-label color="dark" item-left>
+                <ion-icon name="md-lock"></ion-icon>
+              </ion-label>
+            
+            
+              <ion-input style="user-select: auto" class="ion-input" [(ngModel)]="password" type="{{type}}" placeholder="Password" name="password"></ion-input>
+            
+
+              <button  class="ion-input-button" *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye-off"></ion-icon></button>
+              <button  class="ion-input-button" *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye"></ion-icon></button> 
+         
+          
+         
+          
+            
+        </ion-item>
+      <!--Forgot Password Link -->
+          <ion-row>
+          <ion-col>
+            <!-- <ion-item> -->
+            <ion-row>
+                  <ion-checkbox [(ngModel)]="rememberLogin" (ionChange)="keepMeLogin()" style="margin-top:13px; margin-right:5px; margin-left:16px"></ion-checkbox>
+                  <ion-label style="text-align:left; font-size: 12px; padding-top:4px">Remember Me</ion-label>
+             
+            </ion-row>
+                 
+          </ion-col>
+          <ion-col>
+              <button ion-button clear color="button-color" style="text-align:right; font-size: 12px" (click)="forgotPassword()" float-right>Forgot Password</button>
+            </ion-col>
+          </ion-row>
+            <!--Login Button -->
+				<button style="height:48px" ion-button full color="button-color" (click)="onLogin()">Log in</button>
+			
+			</ion-list>
+		<!-- </ion-card-content>
+  </ion-card> -->
+  <!-- Create New Account Link -->
+  <button class="bottom" ion-button clear full color="dark" (click)="navToSignup()">Don't have an Account?  <b><p><font color="#4A90E2">&nbsp;Sign Up</font></p></b></button>
+</ion-content>
+<!--End content -->

@@ -1,0 +1,110 @@
+<!--
+  Generated template for the ItemdetailPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Item Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background-color:#F0F0F0">
+    <ion-list style="padding-left:8px; padding-right:8px;padding-top:8px">
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6  >
+                <p class="row_item_style_left">Warehouse </p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right">{{item.whse}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" >Part No</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.partNo}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" >Description </p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.description}}</p>    
+            </ion-col>
+        </ion-row>
+   
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6  >
+                <p class="row_item_style_left" >Order Qty</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.orderQty}}</p>    
+            </ion-col>
+        </ion-row>
+   
+        <ion-row style="background-color:white; height:27px" >
+            <ion-col col-6  >
+                <p class="row_item_style_left" >Ship Qty</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.committedQty}}</p>    
+            </ion-col>
+       </ion-row>
+       <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" >B/O Qty </p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.backorderQty}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" >Unit Price</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.unitPrice}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" >UOM</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.sellMeasure}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6  >
+                <p class="row_item_style_left" >Discount %</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.discountPct}}</p>    
+            </ion-col>
+        </ion-row>
+   
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Discount Amt</p>  
+            </ion-col>
+            <ion-col col-6 style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.discountAmt}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6 >
+                <p class="row_item_style_left" > Ext Price</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{item.extendedPriceCommitted}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:15px">
+            
+        </ion-row>
+    </ion-list>
+</ion-content>

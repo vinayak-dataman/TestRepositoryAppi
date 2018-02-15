@@ -1,0 +1,73 @@
+<!--
+  Generated template for the AddcompaniesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- Define Navigation Bar -->
+<ion-header>
+  <!-- use ion-toolbar for a normal toolbar and ion-navbar for navigation -->
+  <ion-toolbar>
+    <ion-buttons left clear>
+      <button (click)="onBack()" style="background-color:transparent">
+        <ion-icon class="ion-icon" name="arrow-round-back" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Companies
+    </ion-title>
+    <ion-buttons right>
+    
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<!-- Controls --> 
+<ion-content padding>
+  <ion-list>
+    <ion-item no-lines style="border-style: solid; height:40px; border-width: 1px;border-radius:3px;border-color: #E3e3e3;user-select:auto">
+        <ion-input class="text_style" style="user-select:auto" type="text" placeholder="Company URL" value="" [(ngModel)]="companyApiUrl" name="companyApiUrl" 
+        ></ion-input>
+    </ion-item>
+    </ion-list>
+      <ion-label class="text_style" style="margin-top:5px">Company URL</ion-label>
+      <button class="button_style" ion-button block color="button-color" (click)="loadCompanies()">Get Companies List</button>
+   
+  <ion-list>
+    <!-- <ion-item *ngFor="let company of companies" class="item_background">
+      <ion-row>
+        <ion-col col-8>
+          <p style="color:aliceblue; margin-top:5px; margin-right:10px">{{company.description}} </p>
+        </ion-col>
+        <ion-col col-4 style="padding-left:5px">
+          <ion-buttons right clear>
+            <button (click)="addtomycompany(company.description, company.url)" style="background-color:transparent">
+              <ion-icon class="ion-icon" name="md-add-circle" color="light"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-item> -->
+
+    <ion-item *ngFor="let company of companies" class="item_background">
+        
+      <ion-row style="display: flex;justify-content: center; text-align: center">
+          <ion-col col-10 style="display:flex;align-items: center!important">
+              <ion-item text-wrap style="background: none; color:white">
+                  {{company.description}} 
+                  <!-- <ion-label style="color:aliceblue; margin-top:5px;"></ion-label> -->
+                  </ion-item>
+          </ion-col>
+          <ion-col col-2 style="display:flex;align-items: center!important; justify-content: center; text-align: center;">
+            <ion-buttons style="align-items: center">
+              <button (click)="addtomycompany(company.description, company.url)" style="background-color:transparent">
+                <ion-icon class="ion-icon" name="md-add-circle" color="light"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+</ion-item>
+  </ion-list>
+</ion-content>

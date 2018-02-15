@@ -1,0 +1,95 @@
+
+<!-- Define Navigation Bar -->
+<ion-header>
+  <!-- use ion-toolbar for a normal toolbar and ion-navbar for navigation -->
+  <ion-toolbar>
+    <ion-buttons left clear>
+      <button (click)="onBack()" style="background-color:transparent">
+        <ion-icon class="ion-icon" name="arrow-round-back" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Signup
+    </ion-title>
+    <ion-buttons right>
+        
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<!-- Define Page content controles -->
+<ion-content class="background">
+  <!--Page Logo -->
+  
+  <ion-row justify-content-center align-items-center style="margin-top:10px">
+    <ion-col>
+     <div style="text-align: center">
+      <img align='center' src="assets/icon/Appi4Spire_v3_a.png" height="140px" width="180px"></div>
+    </ion-col>
+       
+  </ion-row>
+  <!--Start Cards Content -->
+  <ion-card>
+  <ion-card-content>
+    <ion-list>
+  <!--Add User input controls here -->
+
+  <ion-item >
+      <ion-label color="dark" item-left>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input class="ion-input" type="text" placeholder="First Name" [(ngModel)]="userName" name="userName" ></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="dark" item-left>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input class="ion-input" type="text" placeholder="Last Name" [(ngModel)]="lName" name="lName" ></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="dark" item-left>
+        <ion-icon ios="ios-phone-portrait" md="md-phone-portrait"></ion-icon>
+      </ion-label>
+      <ion-input class="ion-input" type="text" placeholder="Spire Username" [(ngModel)]="spireUserName" name="spireUserName" ></ion-input>
+    </ion-item>
+
+
+      <ion-item >
+        <ion-label color="dark" item-left>
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
+        <ion-input class="ion-input" type="text" placeholder="Company Name" [(ngModel)]="companyname" name="companyname" ></ion-input>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label color="dark" item-left>
+        <ion-icon name="md-mail"></ion-icon>
+        </ion-label>
+        <ion-input class="ion-input" type="email" placeholder="Email" [(ngModel)]="useremail" name="useremail" >
+        </ion-input>
+      </ion-item>
+
+    
+
+  <!--Password controls with show Hide Functionality -->
+      <ion-item>
+        <ion-label color="dark" item-left>
+        <ion-icon name="md-lock"></ion-icon>
+        </ion-label>
+        <ion-input class="ion-input" [(ngModel)]="password" type="{{type}}" placeholder="Password" name="password"></ion-input>
+        <button  class="ion-input-button" *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye-off"></ion-icon></button>
+        <button  class="ion-input-button" *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="md-eye"></ion-icon></button>
+      </ion-item>
+        
+      <!--Create Account Button -->
+      <button class="button_style" ion-button block color="button-color" (click)="createAccount()">Signup</button>
+    
+    </ion-list>
+  </ion-card-content>
+  </ion-card>
+  <button class="bottom" ion-button clear full color="dark" (click)="navToLogin()">Already have an Account?  <b><p><font color="#4A90E2">&nbsp;Log In</font></p></b></button>
+</ion-content>
+<!--Close -->

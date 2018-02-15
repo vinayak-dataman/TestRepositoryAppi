@@ -1,0 +1,512 @@
+<!--
+  Generated template for the InventoryitemdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Inventory Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="background-color:#F0f0f0">
+
+
+        <ion-refresher (ionRefresh)="doRefresh($event);">
+                <ion-refresher-content 
+                pullingText="Pull to refresh"
+                pullingIcon="arrow-dropdown"
+                refreshingSpinner="circles"
+                refreshingText="..fetching">
+              </ion-refresher-content>
+              </ion-refresher>
+          
+
+
+
+    <ion-list *ngIf="record" style="padding-left:8px; padding-right:8px">
+        <ion-row style="padding-top:7px; height:30px">
+            <b>General</b>
+        </ion-row>
+      
+      <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+          <p class="row_item_style_left">Warehouse </p>  
+        </ion-col>
+      <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right">{{record.whse}}</p>    
+      </ion-col>
+            
+    </ion-row>
+        
+    <ion-row style="background-color:white; height:27px">
+          <ion-col col-6>
+              <p class="row_item_style_left" >Part Number</p>  
+          </ion-col>
+          <ion-col col-6  style="padding-left:2px">
+              <p class="row_item_style_right" >{{record.partNo}}</p>    
+          </ion-col>
+    </ion-row>
+    <ion-row style="background-color:white; height:30px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Description </p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{record.description }}</p>    
+        </ion-col>
+  </ion-row>
+
+    <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Status   </p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{status}}</p>    
+        </ion-col>
+    </ion-row>
+    
+  <ion-row style="background-color:white; height:27px">
+      <ion-col col-6>
+          <p class="row_item_style_left" >Type</p>  
+      </ion-col>
+      <ion-col col-6  style="padding-left:2px">
+          <p class="row_item_style_right" >{{inventoryType}}</p>    
+      </ion-col>
+</ion-row> 
+<ion-row *ngIf="isLotNumberd" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Lot Numbered</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{isLotNumberd}}</p>    
+    </ion-col>
+</ion-row>
+<ion-row *ngIf="consumeBy" style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Consume By</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{consumeBy}}</p>    
+    </ion-col>
+</ion-row>
+
+
+<ion-row *ngIf="serialized"style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Serialized</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{serialized}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Product Code</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{record.productCode}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px" *ngIf="record.alternatePartNo">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Alternate </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{record.alternatePartNo}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px" *ngIf="record.accessoryWhse">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Accessory Warehouse </p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{record.accessoryWhse}}</p>    
+    </ion-col>
+</ion-row>
+
+
+
+<ion-row style="background-color:white; height:27px" *ngIf="record.accessoryPartno">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Part</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{record.accessoryPartno}}</p>    
+    </ion-col>
+</ion-row>
+
+
+<ion-row style="background-color:white; height:27px" *ngIf="record.salesDept">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Sales Department</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{record.salesDept}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Allow Backorder</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{allowBackorder}}</p>    
+    </ion-col>
+</ion-row>
+
+<ion-row style="background-color:white; height:27px">
+    <ion-col col-6>
+        <p class="row_item_style_left" >Allow Returns</p>  
+    </ion-col>
+    <ion-col col-6  style="padding-left:2px">
+        <p class="row_item_style_right" >{{allowReturns}}</p>    
+    </ion-col>
+</ion-row>
+<ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Allow Returns</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{allowReturns}}</p>    
+        </ion-col>
+    </ion-row>
+    <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Foreground  Color</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                    <div style="height:20px; width:25px">
+                            <p [ngStyle]="{'background-color':forgroundColor}">&nbsp;&nbsp;</p>  
+                    </div>
+                    <!-- <div style="height: 20px;width:20px" style.color]="getColor(person.country)" background-color:foregroundColor"></div> -->
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+                <ion-col col-6>
+                    <p class="row_item_style_left" >Background Color</p>  
+                </ion-col>
+                <ion-col col-6  style="padding-left:2px">
+                    <div style="height:20px; width:25px">
+                            <p [ngStyle]="{'background-color':backgroundColor}">&nbsp;&nbsp;</p>  
+                    </div>
+                    <!-- <div style="height: 20px;width:20px" style.color]="getColor(person.country)" background-color:foregroundColor"></div> -->
+                </ion-col>
+            </ion-row>
+            <ion-row  style=" background-color:white; height:15px"></ion-row>
+
+
+
+            <!-- Quantities Label ...-->
+            <ion-row style="padding-top:7px; height:30px">
+                    <b>Quantities</b>
+            </ion-row>
+              <ion-row style="background-color:white; height:27px">
+                  <ion-col col-6>
+                      <p class="row_item_style_left" >On Hand Qty</p>  
+                  </ion-col>
+                  <ion-col col-6  style="padding-left:2px">
+                      <p class="row_item_style_right" >{{record.onHandQty }}</p>    
+                  </ion-col>
+              </ion-row>
+
+
+  <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Available Qty</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{record.availableQty}}</p>    
+        </ion-col>
+    </ion-row>
+  
+    <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Committed Qty</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{record.committedQty }}</p>    
+        </ion-col>
+    </ion-row>
+    
+    <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Minimum Buy Qty</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{record.minimumBuyQty }}</p>    
+        </ion-col>
+    </ion-row>
+     <ion-row style="background-color:white; height:15px"></ion-row>
+   
+    <ion-row style="padding-top:7px; height:30px">
+            <b>Physical</b>
+    </ion-row>
+
+    <ion-row style="background-color:white; height:27px">
+        <ion-col col-6>
+            <p class="row_item_style_left" >Pack Size</p>  
+        </ion-col>
+        <ion-col col-6  style="padding-left:2px">
+            <p class="row_item_style_right" >{{record.packSize }}</p>    
+        </ion-col>
+    </ion-row>
+    <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Weight </p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.weight}}</p>    
+            </ion-col>
+    </ion-row>
+    <ion-row style="background-color:white; height:27px" *ngIf="record.location">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Location</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.location}}</p>    
+            </ion-col>
+        </ion-row>
+    
+        <ion-row style="background-color:white; height:27px" *ngIf="record.manufactureCountry">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Country of Origin</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.manufactureCountry }}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+                <ion-col col-6>
+                    <p class="row_item_style_left" >HS Code</p>  
+                </ion-col>
+                <ion-col col-6  style="padding-left:2px">
+                    <p class="row_item_style_right" >{{record.minimumBuyQty }}</p>    
+                </ion-col>
+        </ion-row>
+        <ion-row  style=" background-color:white; height:15px"></ion-row>
+
+
+        <!-- Price and Unit Detail  -->
+
+        <ion-row style="padding-top:7px; height:30px">
+                <b>Price and Unit</b>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+              <p class="row_item_style_left" >Price</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{sellPrice}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+              <p class="row_item_style_left" >Stock UOM</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.stockMeasureCode }}</p>    
+            </ion-col>
+        </ion-row>
+        
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Buy UOM</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.buyMeasureCode }}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px" *ngIf="record.sellMeasureCode">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Sell UOM</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.sellMeasureCode }}</p>    
+            </ion-col>
+        </ion-row>
+     
+        <ion-row  style=" background-color:white; height:15px"></ion-row>
+
+        <!-- Units -->
+        <ion-row style="padding-top:7px; height:30px">
+            <b>Units</b>
+        </ion-row>
+            
+        <ion-item *ngFor="let unit of units" class="item_background" (click)="showUnitDetails(unit)">
+            <ion-row>
+                <ion-col>
+                    <p style="font-size: 12px;color:#272727; margin-top:5px"><span style="color: #A3A3A3">UOM Code&nbsp; </span> <b>{{unit.code}}</b></p>
+                    <p *ngIf="unit.description" style="font-size: 12px;color:black; margin-top:5px"><span style="color: #A3A3A3">UOM Description&nbsp; </span> <b>{{unit.description}}</b></p>
+                
+                </ion-col>
+                
+            </ion-row>
+        </ion-item> 
+        <ion-row  style=" background-color:white; height:3px"></ion-row>
+      
+      
+      
+        <ion-row style="padding-top:7px; height:30px">
+                <b>Prices</b>
+        </ion-row>
+    
+         <ion-item *ngFor="let item of finalPricings" (click)="showPricingDetails(item)">
+                            
+            <ion-row>
+                <ion-col col-6>
+                    <p class="row_item_style_left" >UOM</p>  
+                </ion-col>
+                <ion-col col-6  style="padding-left:2px">
+                    <p class="row_item_style_right" >{{item.uom}}</p>    
+                </ion-col>
+                
+            </ion-row>
+            <ion-row *ngFor="let p of item.p_values">
+                <ion-col col-6>
+                    <p class="row_item_style_left" >{{p.price_label}}</p>  
+                </ion-col>
+                <ion-col col-6  style="padding-left:2px">
+                    <p class="row_item_style_right" >{{p.p_values}}</p>    
+                </ion-col>
+            </ion-row>
+
+        </ion-item> 
+             
+    <ion-row  style=" background-color:white; height:3px"></ion-row>
+
+
+
+
+
+
+
+
+            
+        <ion-row style="padding-top:7px; height:30px">
+                <b>Purchasing</b>
+        </ion-row>
+        <ion-row *ngIf="record.primaryVendor" style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Primary Vendor</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.primaryVendor.vendorNo}}</p>    
+            </ion-col>
+        </ion-row>
+                    
+        <ion-row *ngIf="record.primaryVendor" style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Primary Vendor Name</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.primaryVendor.name}}</p>    
+            </ion-col>
+        </ion-row>
+                    
+                    
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >On Order Qty</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.onPurchaseQty }}</p>    
+            </ion-col>
+        </ion-row>
+                     
+        
+                    
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Reorder Point</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.reorderPoint}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px" *ngIf="record.currentPONo">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Current PO</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.currentPONo}}</p>    
+            </ion-col>
+        </ion-row>
+                    
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >PO Due Date</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.poDueDate}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Duty %</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.dutyPct}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Freight %</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.freightPct}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Default Expiry Days</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.defaultExpiryDate}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="record.currentCost" style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Current Cost</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.currentCost}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="record.averageCost" style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Average Cost</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.averageCost}}</p>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="record.standardCost" style="background-color:white; height:27px">
+            <ion-col col-6>
+                <p class="row_item_style_left" >Standard Cost</p>  
+            </ion-col>
+            <ion-col col-6  style="padding-left:2px">
+                <p class="row_item_style_right" >{{record.standardCost}}</p>    
+            </ion-col>
+        </ion-row>
+        <ion-row  style=" background-color:white; height:15px"></ion-row>
+                    
+                    
+        
+    </ion-list>
+    </ion-content>

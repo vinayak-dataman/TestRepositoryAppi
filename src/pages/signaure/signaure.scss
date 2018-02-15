@@ -1,0 +1,19 @@
+page-signaure {
+    signature-pad {
+        canvas {
+          border: dashed 1px #cccccc;
+          width: 100%; height: 200px;
+        }
+      }
+
+      ion-modal.custom-popup ion-backdrop {
+        visibility: visible !important;
+        z-index:0;
+    }
+    ion-modal.custom-popup .modal-wrapper{
+        top: 20%;
+        width:60%;
+        height:300px;
+        position:absolute;
+    }
+}
